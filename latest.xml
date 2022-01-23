@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+	<ExportedFolder Id="c1cb6e53-5eca-4d03-bc96-3ea3ba426ccd" Name="挖宝会计不请自来" Enabled="true">
+		<Folders>
+			<Folder Id="978cb0aa-0d8f-4bd1-82f4-1d541355a7d7" Name="基础功能 请全部勾选" Enabled="true">
+				<Folders />
+				<Triggers>
+					<Trigger Enabled="true" Name="0.0手动重置" Id="5158ff75-f55f-4728-bd39-56bc5abe5c25" RegularExpression="^.{14} 00:0038:金币重置$">
+						<Actions>
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" LogLevel="-1" VariableOp="SetNumeric" VariableName="mapnum" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 已重置" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="0.1招募进组时重置" Id="e22fc0a9-8666-422c-9d24-3c9f3f5c8683" RegularExpression="^.{14} 00:0039:加入了.{1,10}组建的“讨伐歼灭战：里塔提恩强攻战”队伍。$">
+						<Actions>
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 加入了挖宝小队 数据已重置" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 金币重置" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="100">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="1.0记录金币(1)" Id="675a0ba5-487b-4f57-afe3-8666d3a5a7ec" RegularExpression="^.{14} 00:003e:获得了(?&lt;gold2&gt;\d{0,3})金币。$">
+						<Actions>
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="${var:money}+${gold2}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" LogLevel="-1" TextAuraAlignment="MiddleRight" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test1" TextAuraExpression="${gold2}金币已到账!" TextAuraXIniExpression="398" TextAuraYIniExpression="1033" TextAuraWIniExpression="187" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="test1" TextAuraFontName="宋体" ActionType="TextAura" ExecutionDelayExpression="30000">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="1.1记录金币(k)" Id="2ed4d748-31a7-4f89-82e1-5c1df02a1ff6" RegularExpression="^.{14} 00:003e:获得了(?&lt;gold1&gt;\d{0,3}),(?&lt;gold2&gt;\d{3})金币。$">
+						<Actions>
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="${var:money}+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" LogLevel="-1" TextAuraAlignment="MiddleRight" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test1" TextAuraExpression="${gold1},${gold2}金币已到账!" TextAuraXIniExpression="398" TextAuraYIniExpression="1033" TextAuraWIniExpression="187" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="test1" TextAuraFontName="宋体" ActionType="TextAura" ExecutionDelayExpression="30000">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="1.2记录金币(m)" Id="7796806c-054e-418c-b8d9-fcb3d008125a" RegularExpression="^.{14} 00:003e:获得了(?&lt;gold0&gt;\d{0,3}),(?&lt;gold1&gt;\d{3}),(?&lt;gold2&gt;\d{3})金币。$">
+						<Actions>
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="${var:money}+${gold0}*1000000+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" LogLevel="-1" TextAuraAlignment="MiddleRight" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test1" TextAuraExpression="${gold0},${gold1},${gold2}金币已到账!" TextAuraXIniExpression="398" TextAuraYIniExpression="1033" TextAuraWIniExpression="187" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="test1" TextAuraFontName="宋体" ActionType="TextAura" ExecutionDelayExpression="30000">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="2.0地图数" Id="27397755-8bf9-40ef-a418-38d1e53b976d" RegularExpression="^.{14} 00:0839:将陷阱引来的魔物全部打倒了！$">
+						<Actions>
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mapnum" VariableExpression="${var:mapnum}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 当前地图数: ${var:mapnum}" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="100">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="2.1绿图地图数" Id="632bbd41-5047-4f40-bdfc-958e0aea3fc4" RegularExpression="^.{14} 00:0839:“运河宝物库深层”任务开始。$">
+						<Actions>
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mapnum" VariableExpression="${var:mapnum}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 当前地图数: ${var:mapnum}" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="100">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="3.0出洞显示" Id="576c65e5-1abe-4dd0-ab1e-4ab5c1af94d6" RegularExpression="^.{14} 00:0839:“(运河宝物库神殿|水城宝物库|梦羽宝境|运河宝物库|运河宝物库深层|梦羽宝殿)”任务结束了。$">
+						<Actions>
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 当前地图数: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="3.1最终区" Id="5382a39f-0cdb-4e3a-8570-4f9d5301f118" RegularExpression="^.{14} 00:0839:最终区的封锁解除了……$">
+						<Actions>
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 当前地图数: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="4.1 跨服贝查询" Id="bfff6cde-e838-4a79-ab01-14c6cf0d336e" RegularExpression="^.{14} 00:0067:.*:挖宝查询$">
+						<Actions>
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/cwl4 当前金币: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/cwl4 当前地图: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="4.0查询" Id="d658abea-6dc4-4337-ada1-99da5409e3c5" RegularExpression="^.{14} 00:0038:挖宝(查询|统计)$">
+						<Actions>
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 当前金币: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 当前地图: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+				</Triggers>
+			</Folder>
+			<Folder Id="aec12c29-c2e7-47f3-99dd-1b265fef0754" Name="可选功能 请选择勾选" Enabled="true">
+				<Triggers>
+					<Trigger Enabled="true" Name="9.0 用于小队内成员的查询功能" Id="1b3bcc1c-dc1e-4d1f-8af5-4de78f178335" RegularExpression="^.{14} 00:000e:.*:挖宝(统计|查询)$" RefirePeriodExpression="5000">
+						<Actions>
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p 当前金币: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
+								<Condition Enabled="false" Grouping="Or" />
+								<Conditions />
+							</Action>
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p 当前地图: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
+								<Condition Enabled="false" Grouping="Or" />
+								<Conditions />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="9.1 g10/g12转盘roll点提示" Id="0213d22a-adc3-4f4a-a93b-65731c0319fe" RegularExpression="^.{14} 00:0839:好像还有没拿走的财宝……$" PeriodRefire="Deny" RefirePeriodExpression="3000">
+						<Actions>
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p roll一下点/捡皮袋/宝箱! &lt;se.1&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="9.1.1 进洞之前roll点提示" Id="c2ffb82c-4f73-4d7e-a0c3-e5097cee7347" RegularExpression="^.{14} 00:083c:无法执行，尚未完成分配。$" PeriodRefire="Deny" RefirePeriodExpression="3000">
+						<Actions>
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p roll一下点/捡皮袋/宝箱! &lt;se.1&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+				</Triggers>
+			</Folder>
+		</Folders>
+		<Triggers />
+	</ExportedFolder>
+</TriggernometryExport>
