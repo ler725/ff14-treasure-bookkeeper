@@ -149,17 +149,17 @@
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="9.1 g10/g12转盘roll点提示" Id="0213d22a-adc3-4f4a-a93b-65731c0319fe" RegularExpression="^.{14} 00:0839:好像还有没拿走的财宝……$" PeriodRefire="Deny" RefirePeriodExpression="3000">
+					<Trigger Enabled="true" Name="9.1 g10/g12转盘roll点提示" Id="0213d22a-adc3-4f4a-a93b-65731c0319fe" RegularExpression="^.{14} 00:0839:好像还有没拿走的财宝……$" PeriodRefire="Deny" RefirePeriodExpression="5000">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p roll一下点/捡皮袋/宝箱! &lt;se.1&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p roll一下点/捡皮袋/宝箱! &lt;se.4&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="9.1.1 进洞之前roll点提示" Id="c2ffb82c-4f73-4d7e-a0c3-e5097cee7347" RegularExpression="^.{14} 00:083c:无法执行，尚未完成分配。$" PeriodRefire="Deny" RefirePeriodExpression="3000">
+					<Trigger Enabled="true" Name="9.1.1 进洞之前roll点提示" Id="c2ffb82c-4f73-4d7e-a0c3-e5097cee7347" RegularExpression="^.{14} 00:083c:无法执行，尚未完成分配。$" PeriodRefire="Deny" RefirePeriodExpression="5000">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p roll一下点/捡皮袋/宝箱! &lt;se.1&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p roll一下点/捡皮袋/宝箱! &lt;se.4&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
