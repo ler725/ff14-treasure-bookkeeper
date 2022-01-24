@@ -1,132 +1,132 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <TriggernometryExport Version="1">
-	<ExportedFolder Id="c1cb6e53-5eca-4d03-bc96-3ea3ba426ccd" Name="ÍÚ±¦»á¼Æ²»Çë×ÔÀ´" Enabled="true">
+	<ExportedFolder Id="c1cb6e53-5eca-4d03-bc96-3ea3ba426ccd" Name="æŒ–å®ä¼šè®¡ä¸è¯·è‡ªæ¥" Enabled="true">
 		<Folders>
-			<Folder Id="978cb0aa-0d8f-4bd1-82f4-1d541355a7d7" Name="»ù´¡¹¦ÄÜ ÇëÈ«²¿¹´Ñ¡" Enabled="true">
+			<Folder Id="978cb0aa-0d8f-4bd1-82f4-1d541355a7d7" Name="åŸºç¡€åŠŸèƒ½ è¯·å…¨éƒ¨å‹¾é€‰" Enabled="true">
 				<Folders />
 				<Triggers>
-					<Trigger Enabled="true" Name="0.0ÊÖ¶¯ÖØÖÃ" Id="5158ff75-f55f-4728-bd39-56bc5abe5c25" RegularExpression="^.{14} 00:0038:½ð±ÒÖØÖÃ$">
+					<Trigger Enabled="true" Name="0.0æ‰‹åŠ¨é‡ç½®" Id="5158ff75-f55f-4728-bd39-56bc5abe5c25" RegularExpression="^.{14} 00:0038:é‡‘å¸é‡ç½®$">
 						<Actions>
-							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="Variable">
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="Variable">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="2" LogLevel="-1" VariableOp="SetNumeric" VariableName="mapnum" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="Variable">
+							<Action OrderNumber="2" LogLevel="-1" VariableOp="SetNumeric" VariableName="mapnum" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="Variable">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e ÒÑÖØÖÃ" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson">
+							<Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e å·²é‡ç½®" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="0.1ÕÐÄ¼½ø×éÊ±ÖØÖÃ" Id="e22fc0a9-8666-422c-9d24-3c9f3f5c8683" RegularExpression="^.{14} 00:0039:¼ÓÈëÁË.{1,10}×é½¨µÄ¡°ÌÖ·¥¼ßÃðÕ½£ºÀïËþÌá¶÷Ç¿¹¥Õ½¡±¶ÓÎé¡£$">
+					<Trigger Enabled="true" Name="0.1æ‹›å‹Ÿè¿›ç»„æ—¶é‡ç½®" Id="e22fc0a9-8666-422c-9d24-3c9f3f5c8683" RegularExpression="^.{14} 00:0039:åŠ å…¥äº†.{1,10}ç»„å»ºçš„â€œè®¨ä¼æ­¼ç­æˆ˜ï¼šé‡Œå¡”ææ©å¼ºæ”»æˆ˜â€é˜Ÿä¼ã€‚$">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e ¼ÓÈëÁËÍÚ±¦Ð¡¶Ó Êý¾ÝÒÑÖØÖÃ" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e åŠ å…¥äº†æŒ–å®å°é˜Ÿ æ•°æ®å·²é‡ç½®" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e ½ð±ÒÖØÖÃ" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson" ExecutionDelayExpression="100">
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e é‡‘å¸é‡ç½®" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson" ExecutionDelayExpression="100">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="1.0¼ÇÂ¼½ð±Ò(1)" Id="675a0ba5-487b-4f57-afe3-8666d3a5a7ec" RegularExpression="^.{14} 00:003e:»ñµÃÁË(?&lt;gold2&gt;\d{0,3})½ð±Ò¡£$">
+					<Trigger Enabled="true" Name="1.0è®°å½•é‡‘å¸(1)" Id="675a0ba5-487b-4f57-afe3-8666d3a5a7ec" RegularExpression="^.{14} 00:003e:èŽ·å¾—äº†(?&lt;gold2&gt;\d{0,3})é‡‘å¸ã€‚$">
 						<Actions>
-							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="${var:money}+${gold2}" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="Variable">
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="${var:money}+${gold2}" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="Variable">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="2" LogLevel="-1" TextAuraAlignment="MiddleRight" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test1" TextAuraExpression="${gold2}½ð±ÒÒÑµ½ÕË!" TextAuraXIniExpression="398" TextAuraYIniExpression="1033" TextAuraWIniExpression="187" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Î¢ÈíÑÅºÚ" ActionType="TextAura">
+							<Action OrderNumber="2" LogLevel="-1" TextAuraAlignment="MiddleRight" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test1" TextAuraExpression="${gold2}é‡‘å¸å·²åˆ°è´¦!" TextAuraXIniExpression="398" TextAuraYIniExpression="1033" TextAuraWIniExpression="187" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="å¾®è½¯é›…é»‘" ActionType="TextAura">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="test1" TextAuraFontName="ËÎÌå" ActionType="TextAura" ExecutionDelayExpression="30000">
+							<Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="test1" TextAuraFontName="å®‹ä½“" ActionType="TextAura" ExecutionDelayExpression="30000">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="1.1¼ÇÂ¼½ð±Ò(k)" Id="2ed4d748-31a7-4f89-82e1-5c1df02a1ff6" RegularExpression="^.{14} 00:003e:»ñµÃÁË(?&lt;gold1&gt;\d{0,3}),(?&lt;gold2&gt;\d{3})½ð±Ò¡£$">
+					<Trigger Enabled="true" Name="1.1è®°å½•é‡‘å¸(k)" Id="2ed4d748-31a7-4f89-82e1-5c1df02a1ff6" RegularExpression="^.{14} 00:003e:èŽ·å¾—äº†(?&lt;gold1&gt;\d{0,3}),(?&lt;gold2&gt;\d{3})é‡‘å¸ã€‚$">
 						<Actions>
-							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="${var:money}+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="Variable">
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="${var:money}+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="Variable">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="2" LogLevel="-1" TextAuraAlignment="MiddleRight" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test1" TextAuraExpression="${gold1},${gold2}½ð±ÒÒÑµ½ÕË!" TextAuraXIniExpression="398" TextAuraYIniExpression="1033" TextAuraWIniExpression="187" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Î¢ÈíÑÅºÚ" ActionType="TextAura">
+							<Action OrderNumber="2" LogLevel="-1" TextAuraAlignment="MiddleRight" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test1" TextAuraExpression="${gold1},${gold2}é‡‘å¸å·²åˆ°è´¦!" TextAuraXIniExpression="398" TextAuraYIniExpression="1033" TextAuraWIniExpression="187" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="å¾®è½¯é›…é»‘" ActionType="TextAura">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="test1" TextAuraFontName="ËÎÌå" ActionType="TextAura" ExecutionDelayExpression="30000">
+							<Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="test1" TextAuraFontName="å®‹ä½“" ActionType="TextAura" ExecutionDelayExpression="30000">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="1.2¼ÇÂ¼½ð±Ò(m)" Id="7796806c-054e-418c-b8d9-fcb3d008125a" RegularExpression="^.{14} 00:003e:»ñµÃÁË(?&lt;gold0&gt;\d{0,3}),(?&lt;gold1&gt;\d{3}),(?&lt;gold2&gt;\d{3})½ð±Ò¡£$">
+					<Trigger Enabled="true" Name="1.2è®°å½•é‡‘å¸(m)" Id="7796806c-054e-418c-b8d9-fcb3d008125a" RegularExpression="^.{14} 00:003e:èŽ·å¾—äº†(?&lt;gold0&gt;\d{0,3}),(?&lt;gold1&gt;\d{3}),(?&lt;gold2&gt;\d{3})é‡‘å¸ã€‚$">
 						<Actions>
-							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="${var:money}+${gold0}*1000000+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="Variable">
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="money" VariableExpression="${var:money}+${gold0}*1000000+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="Variable">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="2" LogLevel="-1" TextAuraAlignment="MiddleRight" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test1" TextAuraExpression="${gold0},${gold1},${gold2}½ð±ÒÒÑµ½ÕË!" TextAuraXIniExpression="398" TextAuraYIniExpression="1033" TextAuraWIniExpression="187" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Î¢ÈíÑÅºÚ" ActionType="TextAura">
+							<Action OrderNumber="2" LogLevel="-1" TextAuraAlignment="MiddleRight" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test1" TextAuraExpression="${gold0},${gold1},${gold2}é‡‘å¸å·²åˆ°è´¦!" TextAuraXIniExpression="398" TextAuraYIniExpression="1033" TextAuraWIniExpression="187" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="å¾®è½¯é›…é»‘" ActionType="TextAura">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="test1" TextAuraFontName="ËÎÌå" ActionType="TextAura" ExecutionDelayExpression="30000">
+							<Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="test1" TextAuraFontName="å®‹ä½“" ActionType="TextAura" ExecutionDelayExpression="30000">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="2.0µØÍ¼Êý" Id="27397755-8bf9-40ef-a418-38d1e53b976d" RegularExpression="^.{14} 00:0839:½«ÏÝÚåÒýÀ´µÄÄ§ÎïÈ«²¿´òµ¹ÁË£¡$">
+					<Trigger Enabled="true" Name="2.0åœ°å›¾æ•°" Id="27397755-8bf9-40ef-a418-38d1e53b976d" RegularExpression="^.{14} 00:0839:å°†é™·é˜±å¼•æ¥çš„é­”ç‰©å…¨éƒ¨æ‰“å€’äº†ï¼$">
 						<Actions>
-							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mapnum" VariableExpression="${var:mapnum}+1" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="Variable">
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mapnum" VariableExpression="${var:mapnum}+1" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="Variable">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e µ±Ç°µØÍ¼Êý: ${var:mapnum}" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson" ExecutionDelayExpression="100">
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e å½“å‰åœ°å›¾æ•°: ${var:mapnum}" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson" ExecutionDelayExpression="100">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="2.1ÂÌÍ¼µØÍ¼Êý" Id="632bbd41-5047-4f40-bdfc-958e0aea3fc4" RegularExpression="^.{14} 00:0839:¡°ÔËºÓ±¦Îï¿âÉî²ã¡±ÈÎÎñ¿ªÊ¼¡£$">
+					<Trigger Enabled="true" Name="2.1ç»¿å›¾åœ°å›¾æ•°" Id="632bbd41-5047-4f40-bdfc-958e0aea3fc4" RegularExpression="^.{14} 00:0839:â€œè¿æ²³å®ç‰©åº“æ·±å±‚â€ä»»åŠ¡å¼€å§‹ã€‚$">
 						<Actions>
-							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mapnum" VariableExpression="${var:mapnum}+1" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="Variable">
+							<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mapnum" VariableExpression="${var:mapnum}+1" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="Variable">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e µ±Ç°µØÍ¼Êý: ${var:mapnum}" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson" ExecutionDelayExpression="100">
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e å½“å‰åœ°å›¾æ•°: ${var:mapnum}" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson" ExecutionDelayExpression="100">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="3.0³ö¶´ÏÔÊ¾" Id="576c65e5-1abe-4dd0-ab1e-4ab5c1af94d6" RegularExpression="^.{14} 00:0839:¡°(ÔËºÓ±¦Îï¿âÉñµî|Ë®³Ç±¦Îï¿â|ÃÎÓð±¦¾³|ÔËºÓ±¦Îï¿â|ÔËºÓ±¦Îï¿âÉî²ã|ÃÎÓð±¦µî)¡±ÈÎÎñ½áÊøÁË¡£$">
+					<Trigger Enabled="true" Name="3.0å‡ºæ´žæ˜¾ç¤º" Id="576c65e5-1abe-4dd0-ab1e-4ab5c1af94d6" RegularExpression="^.{14} 00:0839:â€œ(è¿æ²³å®ç‰©åº“ç¥žæ®¿|æ°´åŸŽå®ç‰©åº“|æ¢¦ç¾½å®å¢ƒ|è¿æ²³å®ç‰©åº“|è¿æ²³å®ç‰©åº“æ·±å±‚|æ¢¦ç¾½å®æ®¿)â€ä»»åŠ¡ç»“æŸäº†ã€‚$">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e µ±Ç°µØÍ¼Êý: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e å½“å‰åœ°å›¾æ•°: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="3.1×îÖÕÇø" Id="5382a39f-0cdb-4e3a-8570-4f9d5301f118" RegularExpression="^.{14} 00:0839:×îÖÕÇøµÄ·âËø½â³ýÁË¡­¡­$">
+					<Trigger Enabled="true" Name="3.1æœ€ç»ˆåŒº" Id="5382a39f-0cdb-4e3a-8570-4f9d5301f118" RegularExpression="^.{14} 00:0839:æœ€ç»ˆåŒºçš„å°é”è§£é™¤äº†â€¦â€¦$">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e µ±Ç°µØÍ¼Êý: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e å½“å‰åœ°å›¾æ•°: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="4.1 ¿ç·þ±´²éÑ¯" Id="bfff6cde-e838-4a79-ab01-14c6cf0d336e" RegularExpression="^.{14} 00:0067:.*:ÍÚ±¦²éÑ¯$">
+					<Trigger Enabled="true" Name="4.1 è·¨æœè´æŸ¥è¯¢" Id="bfff6cde-e838-4a79-ab01-14c6cf0d336e" RegularExpression="^.{14} 00:0067:.*:æŒ–å®æŸ¥è¯¢$">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/cwl4 µ±Ç°½ð±Ò: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson" ExecutionDelayExpression="10">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/cwl4 å½“å‰é‡‘å¸: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson" ExecutionDelayExpression="10">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/cwl4 µ±Ç°µØÍ¼: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson" ExecutionDelayExpression="10">
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/cwl4 å½“å‰åœ°å›¾: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson" ExecutionDelayExpression="10">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="4.0²éÑ¯" Id="d658abea-6dc4-4337-ada1-99da5409e3c5" RegularExpression="^.{14} 00:0038:ÍÚ±¦(²éÑ¯|Í³¼Æ)$">
+					<Trigger Enabled="true" Name="4.0æŸ¥è¯¢" Id="d658abea-6dc4-4337-ada1-99da5409e3c5" RegularExpression="^.{14} 00:0038:æŒ–å®(æŸ¥è¯¢|ç»Ÿè®¡)$">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e µ±Ç°½ð±Ò: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson" ExecutionDelayExpression="10">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e å½“å‰é‡‘å¸: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson" ExecutionDelayExpression="10">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
-							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e µ±Ç°µØÍ¼: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson" ExecutionDelayExpression="10">
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e å½“å‰åœ°å›¾: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson" ExecutionDelayExpression="10">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
@@ -134,32 +134,32 @@
 					</Trigger>
 				</Triggers>
 			</Folder>
-			<Folder Id="aec12c29-c2e7-47f3-99dd-1b265fef0754" Name="¿ÉÑ¡¹¦ÄÜ ÇëÑ¡Ôñ¹´Ñ¡" Enabled="true">
+			<Folder Id="aec12c29-c2e7-47f3-99dd-1b265fef0754" Name="å¯é€‰åŠŸèƒ½ è¯·é€‰æ‹©å‹¾é€‰" Enabled="true">
 				<Triggers>
-					<Trigger Enabled="true" Name="9.0 ÓÃÓÚÐ¡¶ÓÄÚ³ÉÔ±µÄ²éÑ¯¹¦ÄÜ" Id="1b3bcc1c-dc1e-4d1f-8af5-4de78f178335" RegularExpression="^.{14} 00:000e:.*:ÍÚ±¦(Í³¼Æ|²éÑ¯)$" RefirePeriodExpression="5000">
+					<Trigger Enabled="true" Name="9.0 ç”¨äºŽå°é˜Ÿå†…æˆå‘˜çš„æŸ¥è¯¢åŠŸèƒ½" Id="1b3bcc1c-dc1e-4d1f-8af5-4de78f178335" RegularExpression="^.{14} 00:000e:.*:æŒ–å®(ç»Ÿè®¡|æŸ¥è¯¢)$" RefirePeriodExpression="5000">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p µ±Ç°½ð±Ò: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson" ExecutionDelayExpression="10">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p å½“å‰é‡‘å¸: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson" ExecutionDelayExpression="10">
 								<Condition Enabled="false" Grouping="Or" />
 								<Conditions />
 							</Action>
-							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p µ±Ç°µØÍ¼: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson" ExecutionDelayExpression="10">
+							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p å½“å‰åœ°å›¾: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson" ExecutionDelayExpression="10">
 								<Condition Enabled="false" Grouping="Or" />
 								<Conditions />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="9.1 g10/g12×ªÅÌrollµãÌáÊ¾" Id="0213d22a-adc3-4f4a-a93b-65731c0319fe" RegularExpression="^.{14} 00:0839:ºÃÏñ»¹ÓÐÃ»ÄÃ×ßµÄ²Æ±¦¡­¡­$" PeriodRefire="Deny" RefirePeriodExpression="3000">
+					<Trigger Enabled="true" Name="9.1 g10/g12è½¬ç›˜rollç‚¹æç¤º" Id="0213d22a-adc3-4f4a-a93b-65731c0319fe" RegularExpression="^.{14} 00:0839:å¥½åƒè¿˜æœ‰æ²¡æ‹¿èµ°çš„è´¢å®â€¦â€¦$" PeriodRefire="Deny" RefirePeriodExpression="3000">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p rollÒ»ÏÂµã/¼ñÆ¤´ü/±¦Ïä! &lt;se.1&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p rollä¸€ä¸‹ç‚¹/æ¡çš®è¢‹/å®ç®±! &lt;se.1&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="9.1.1 ½ø¶´Ö®Ç°rollµãÌáÊ¾" Id="c2ffb82c-4f73-4d7e-a0c3-e5097cee7347" RegularExpression="^.{14} 00:083c:ÎÞ·¨Ö´ÐÐ£¬ÉÐÎ´Íê³É·ÖÅä¡£$" PeriodRefire="Deny" RefirePeriodExpression="3000">
+					<Trigger Enabled="true" Name="9.1.1 è¿›æ´žä¹‹å‰rollç‚¹æç¤º" Id="c2ffb82c-4f73-4d7e-a0c3-e5097cee7347" RegularExpression="^.{14} 00:083c:æ— æ³•æ‰§è¡Œï¼Œå°šæœªå®Œæˆåˆ†é…ã€‚$" PeriodRefire="Deny" RefirePeriodExpression="3000">
 						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p rollÒ»ÏÂµã/¼ñÆ¤´ü/±¦Ïä! &lt;se.1&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="ËÎÌå" ActionType="GenericJson">
+							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p rollä¸€ä¸‹ç‚¹/æ¡çš®è¢‹/å®ç®±! &lt;se.1&gt;" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="å®‹ä½“" ActionType="GenericJson">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
