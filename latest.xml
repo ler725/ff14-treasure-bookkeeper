@@ -110,17 +110,6 @@
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="4.1 跨服贝查询" Id="bfff6cde-e838-4a79-ab01-14c6cf0d336e" RegularExpression="^.{14} ChatLog 00:0067::.*:挖宝查询$">
-						<Actions>
-							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/cwl1 当前金币: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
-								<Condition Enabled="false" Grouping="Or" />
-							</Action>
-							<Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/cwl1 当前地图: ${var:mapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
-								<Condition Enabled="false" Grouping="Or" />
-							</Action>
-						</Actions>
-						<Condition Enabled="false" Grouping="Or" />
-					</Trigger>
 					<Trigger Enabled="true" Name="4.0查询" Id="d658abea-6dc4-4337-ada1-99da5409e3c5" RegularExpression="^.{14} ChatLog 00:0038::挖宝(查询|统计)$">
 						<Actions>
 							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/e 当前金币: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
