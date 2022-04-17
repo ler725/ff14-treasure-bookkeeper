@@ -31,30 +31,15 @@
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="1.0记录金币(1)" RegularExpression="^.{14} ChatLog 00:003E::获得了(?&lt;gold2&gt;\d{0,3})金币。$">
-						<Actions>
-							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="${var:tb_money}+${gold2}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-								<Condition Enabled="false" Grouping="Or" />
-							</Action>
-						</Actions>
-						<Condition Enabled="false" Grouping="Or" />
-					</Trigger>
-					<Trigger Enabled="true" Name="1.1记录金币(k)" RegularExpression="^.{14} ChatLog 00:003E::获得了(?&lt;gold1&gt;\d{0,3}),(?&lt;gold2&gt;\d{3})金币。$">
-						<Actions>
-							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="${var:tb_money}+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-								<Condition Enabled="false" Grouping="Or" />
-							</Action>
-						</Actions>
-						<Condition Enabled="false" Grouping="Or" />
-					</Trigger>
-					<Trigger Enabled="true" Name="1.2记录金币(m)" RegularExpression="^.{14} ChatLog 00:003E::获得了(?&lt;gold0&gt;\d{0,3}),(?&lt;gold1&gt;\d{3}),(?&lt;gold2&gt;\d{3})金币。$">
-						<Actions>
-							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="${var:tb_money}+${gold0}*1000000+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-								<Condition Enabled="false" Grouping="Or" />
-							</Action>
-						</Actions>
-						<Condition Enabled="false" Grouping="Or" />
-					</Trigger>
+          <Trigger Enabled="true" Name="1.0记录金币" RegularExpression="^.{14} ChatLog 00:003E::获得了(?&lt;gold0&gt;[\d,]+)金币。$">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="${var:tb_money}+${func:format(System.Double,&quot;g&quot;):${gold0}}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
 					<Trigger Enabled="true" Name="2.0地图数" RegularExpression="^.{14} ChatLog 00:0839::将陷阱引来的魔物全部打倒了！$">
 						<Actions>
 							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_mapnum" VariableExpression="${var:tb_mapnum}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
