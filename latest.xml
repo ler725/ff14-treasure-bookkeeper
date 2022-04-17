@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TriggernometryExport Version="1">
 <!--   鲶鱼精邮差版本   -->
-	<ExportedFolder Name="挖宝会计不请自来" Enabled="true">
+  <ExportedFolder Name="挖宝会计不请自来" Enabled="true">
     <Folders>
       <Folder Name="基础功能 请全部勾选" Enabled="true">
         <Folders />
@@ -529,5 +529,5 @@
       </Folder>
     </Folders>
     <Triggers />
-	</ExportedFolder>
+  </ExportedFolder>
 </TriggernometryExport>
