@@ -125,7 +125,7 @@
 			</Folder>
 			<Folder Id="aec12c29-c2e7-47f3-99dd-1b265fef0754" Name="可选功能 请选择勾选" Enabled="true">
 				<Triggers>
-					<Trigger Enabled="true" Name="9.0 用于小队内成员的查询功能" Id="1b3bcc1c-dc1e-4d1f-8af5-4de78f178335" RegularExpression="^.{14} ChatLog 00:000E::.*:挖宝(统计|查询)$" RefirePeriodExpression="5000">
+					<Trigger Enabled="true" Name="9.0 用于小队内成员的查询功能" Id="1b3bcc1c-dc1e-4d1f-8af5-4de78f178335" RegularExpression="^.{14} ChatLog 00:000E:.*:挖宝(统计|查询)$" RefirePeriodExpression="5000">
 						<Actions>
 							<Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/p 当前金币: ${func:format(System.Double,&quot;n0&quot;):${var:money}}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="GenericJson" ExecutionDelayExpression="10">
 								<Condition Enabled="false" Grouping="Or" />
