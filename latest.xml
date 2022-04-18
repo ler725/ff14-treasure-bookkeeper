@@ -150,7 +150,7 @@
           </Folder>
         </Folders>
 				<Triggers>
-					<Trigger Enabled="false" Name="9.0 用于小队内成员的查询功能" RegularExpression="^.{14} ChatLog 00:000E::.*:挖宝(统计|查询)$" RefirePeriodExpression="5000">
+					<Trigger Enabled="false" Name="9.0 用于小队内成员的查询功能" RegularExpression="^.{14} ChatLog 00:000E:.*:挖宝(统计|查询)$" RefirePeriodExpression="5000">
 						<Actions>
 							<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/p 当前金币: ${func:format(System.Double,&quot;n0&quot;):${var:tb_money}}" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="NamedCallback" ExecutionDelayExpression="10">
 								<Condition Enabled="false" Grouping="Or" />
