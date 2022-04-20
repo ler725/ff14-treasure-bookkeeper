@@ -31,29 +31,14 @@
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="1.0记录金币(1)" RegularExpression="^.{14} ChatLog 00:003E::获得了(?&lt;gold2&gt;\d{0,3})金币。$">
+					<Trigger Enabled="true" Name="1.0记录金币" RegularExpression="^.{14} ChatLog 00:003E::获得了(?&lt;gold0&gt;[\d,]+)金币。$">
 						<Actions>
-							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="${var:tb_money}+${gold2}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="${var:tb_money}+${func:format(System.Double,&quot;g&quot;):${gold0}}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
 								<Condition Enabled="false" Grouping="Or" />
 							</Action>
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
-					</Trigger>
-					<Trigger Enabled="true" Name="1.1记录金币(k)" RegularExpression="^.{14} ChatLog 00:003E::获得了(?&lt;gold1&gt;\d{0,3}),(?&lt;gold2&gt;\d{3})金币。$">
-						<Actions>
-							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="${var:tb_money}+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-								<Condition Enabled="false" Grouping="Or" />
-							</Action>
-						</Actions>
-						<Condition Enabled="false" Grouping="Or" />
-					</Trigger>
-					<Trigger Enabled="true" Name="1.2记录金币(m)" RegularExpression="^.{14} ChatLog 00:003E::获得了(?&lt;gold0&gt;\d{0,3}),(?&lt;gold1&gt;\d{3}),(?&lt;gold2&gt;\d{3})金币。$">
-						<Actions>
-							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="${var:tb_money}+${gold0}*1000000+${gold1}*1000+${gold2}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-								<Condition Enabled="false" Grouping="Or" />
-							</Action>
-						</Actions>
-						<Condition Enabled="false" Grouping="Or" />
+						<Conditions />
 					</Trigger>
 					<Trigger Enabled="true" Name="2.0地图数" RegularExpression="^.{14} ChatLog 00:0839::将陷阱引来的魔物全部打倒了！$">
 						<Actions>
@@ -77,8 +62,7 @@
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-<!--   6.05应添加新魔纹 抄一下更新笔记就能提前发布了   -->
-					<Trigger Enabled="true" Name="3.0出洞显示" RegularExpression="^.{14} ChatLog 00:0839::“(运河宝物库神殿|水城宝物库|梦羽宝境|运河宝物库|运河宝物库深层|梦羽宝殿)”任务结束了。$">
+					<Trigger Enabled="true" Name="3.0出洞显示" RegularExpression="^.{14} ChatLog 00:0839::“(运河宝物库神殿|水城宝物库|梦羽宝境|运河宝物库|运河宝物库深层|梦羽宝殿|惊奇百宝城)”任务结束了。$">
 						<Actions>
 							<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 当前地图数: ${var:tb_mapnum}" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="NamedCallback">
 								<Condition Enabled="false" Grouping="Or" />
@@ -108,47 +92,47 @@
 				</Triggers>
 			</Folder>
 			<Folder Name="可选功能 请选择勾选" Enabled="false">
-			        <Folders>
-          <Folder Name="8.0 G10绿图数量统计" Enabled="false">
-            <Folders />
-            <Triggers>
-              <Trigger Enabled="true" Name="A.0 绿图重置(金币重置后绿图数也会重置!" RegularExpression="^.{14} ChatLog 00:0038::金币重置$">
-                <Actions>
-                  <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="tb_ttmapnum" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Action>
-                </Actions>
-                <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
-              </Trigger>
-              <Trigger Enabled="true" Name="8.1 绿图数" RegularExpression="^.{14} ChatLog 00:0839::获得了新的战利品深层传送魔纹的地图。$">
-                <Actions>
-                  <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="tb_ttmapnum" VariableExpression="${var:tb_ttmapnum}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Action>
-                  <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 获得绿图数: ${var:tb_ttmapnum}" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体"  ActionType="NamedCallback" ExecutionDelayExpression="100">
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Action>
-                </Actions>
-                <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
-              </Trigger>
-              <Trigger Enabled="true" Name="8.2 查询" RegularExpression="^.{14} ChatLog 00:0038::挖宝(查询|统计)$">
-                <Actions>
-                  <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 当前绿图: ${var:tb_ttmapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体"  ActionType="NamedCallback" ExecutionDelayExpression="40">
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Action>
-                </Actions>
-                <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
-              </Trigger>
-            </Triggers>
-          </Folder>
-        </Folders>
+				<Folders>
+					<Folder Name="8.0 G10绿图数量统计" Enabled="false">
+						<Folders />
+						<Triggers>
+							<Trigger Enabled="true" Name="A.0 绿图重置(金币重置后绿图数也会重置!" RegularExpression="^.{14} ChatLog 00:0038::金币重置$">
+								<Actions>
+									<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="tb_ttmapnum" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+										<Condition Enabled="false" Grouping="Or" />
+										<Conditions />
+									</Action>
+								</Actions>
+								<Condition Enabled="false" Grouping="Or" />
+								<Conditions />
+							</Trigger>
+							<Trigger Enabled="true" Name="8.1 绿图数" RegularExpression="^.{14} ChatLog 00:0839::获得了新的战利品深层传送魔纹的地图。$">
+								<Actions>
+									<Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="tb_ttmapnum" VariableExpression="${var:tb_ttmapnum}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+										<Condition Enabled="false" Grouping="Or" />
+										<Conditions />
+									</Action>
+									<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 获得绿图数: ${var:tb_ttmapnum}" LogLevel="-1" TextAuraFontSize="9" TextAuraFontName="宋体"	ActionType="NamedCallback" ExecutionDelayExpression="100">
+										<Condition Enabled="false" Grouping="Or" />
+										<Conditions />
+									</Action>
+								</Actions>
+								<Condition Enabled="false" Grouping="Or" />
+								<Conditions />
+							</Trigger>
+							<Trigger Enabled="true" Name="8.2 查询" RegularExpression="^.{14} ChatLog 00:0038::挖宝(查询|统计)$">
+								<Actions>
+									<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 当前绿图: ${var:tb_ttmapnum}" LogLevel="-1" VariableOp="SetNumeric" TextAuraFontSize="9" TextAuraFontName="宋体"	ActionType="NamedCallback" ExecutionDelayExpression="40">
+										<Condition Enabled="false" Grouping="Or" />
+										<Conditions />
+									</Action>
+								</Actions>
+								<Condition Enabled="false" Grouping="Or" />
+								<Conditions />
+							</Trigger>
+						</Triggers>
+					</Folder>
+				</Folders>
 				<Triggers>
 					<Trigger Enabled="false" Name="9.0 用于小队内成员的查询功能" RegularExpression="^.{14} ChatLog 00:000E:.*:挖宝(统计|查询)$" RefirePeriodExpression="5000">
 						<Actions>
