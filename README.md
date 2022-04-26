@@ -46,7 +46,7 @@ https://bbs.tggfl.com/topic/127
 ======注意事项======  
 1. 6.05之后的版本用了具名回调 妈妈再也不用担心我不会弄端口了  
 2. 渣技术力 处于勉强可用的状态  出现问题/有新需求可以邮箱联系 <font color=#162ff9>[CV-2@qq.com]</font> 或本帖下回复   
-max版由悠久负责维护 相关问题请联系 %(#162ff9)[eternalwind118@gmail.com]
+max版由悠久负责维护 相关问题请联系 <font color=#162ff9>[eternalwind118@gmail.com]</font>
 3. 各版本间功能有重复部分并且会导致冲突，请根据个人需求仅导入一个版本使用  
 
 
