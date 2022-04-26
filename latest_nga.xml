@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TriggernometryExport Version="1">
+<!--	 NGA版本	 -->
+	<ExportedFolder Name="挖宝会计不请自来" Enabled="true">
+		<Folders>
+			<Folder Name="基础功能 请全部勾选" Enabled="true">
+				<Folders />
+				<Triggers>
+					<Trigger Enabled="true" Name="0.0手动重置" RegularExpression="^.{14} ChatLog 00:0038::金币重置$">
+						<Actions>
+							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" VariableOp="SetNumeric" VariableName="tb_mapnum" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="0.1招募进组时重置" RegularExpression="^.{14} ChatLog 00:0039::加入了.{1,10}组建的“讨伐歼灭战：里塔提恩强攻战”队伍。$">
+						<Actions>
+							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+							<Action OrderNumber="2" VariableOp="SetNumeric" VariableName="tb_mapnum" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="1.0记录金币" RegularExpression="^.{14} ChatLog 00:003E::获得了(?&lt;gold0&gt;[\d,]+)金币。$">
+						<Actions>
+							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_money" VariableExpression="${var:tb_money}+${func:format(System.Double,&quot;g&quot;):${gold0}}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+						<Conditions />
+					</Trigger>
+					<Trigger Enabled="true" Name="2.0地图数" RegularExpression="^.{14} ChatLog 00:0839::将陷阱引来的魔物全部打倒了！$">
+						<Actions>
+							<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="tb_mapnum" VariableExpression="${var:tb_mapnum}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+								<Condition Enabled="false" Grouping="Or" />
+							</Action>
+						</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="3.0出洞显示" RegularExpression="^.{14} ChatLog 00:0839::“(运河宝物库神殿|水城宝物库|梦羽宝境|运河宝物库|运河宝物库深层|梦羽宝殿|惊奇百宝城)”任务结束了。$">
+							<Actions>
+								<Action OrderNumber="1" TextAuraAlignment="MiddleLeft" TextAuraFontSize="12" TextAuraForeground="Red" TextAuraName="ts_test" TextAuraExpression="当前金币: ${func:format(System.Double,&quot;n0&quot;):${var:tb_money}}&#xD;&#xA;当前地图: ${var:tb_mapnum}" TextAuraXIniExpression="364" TextAuraYIniExpression="889" TextAuraWIniExpression="168" TextAuraHIniExpression="85" TextAuraOIniExpression="100" TextAuraFontName="宋体" ActionType="TextAura">
+									<Condition Enabled="false" Grouping="Or" />
+								</Action>
+								<Action OrderNumber="2" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="ts_test" TextAuraFontName="宋体" ActionType="TextAura" ExecutionDelayExpression="5000">
+									<Condition Enabled="false" Grouping="Or" />
+								</Action>
+							</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+					<Trigger Enabled="true" Name="4.0查询" RegularExpression="^.{14} ChatLog 00:0038::挖宝(查询|统计)$">
+							<Actions>
+								<Action OrderNumber="1" TextAuraAlignment="MiddleLeft" TextAuraFontSize="12" TextAuraForeground="Red" TextAuraName="ts_test" TextAuraExpression="当前金币: ${func:format(System.Double,&quot;n0&quot;):${var:tb_money}}&#xD;&#xA;当前地图: ${var:tb_mapnum}" TextAuraXIniExpression="364" TextAuraYIniExpression="889" TextAuraWIniExpression="168" TextAuraHIniExpression="85" TextAuraOIniExpression="100" TextAuraFontName="宋体" ActionType="TextAura">
+									<Condition Enabled="false" Grouping="Or" />
+								</Action>
+								<Action OrderNumber="2" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="ts_test" TextAuraFontName="宋体" ActionType="TextAura" ExecutionDelayExpression="5000">
+									<Condition Enabled="false" Grouping="Or" />
+								</Action>
+							</Actions>
+						<Condition Enabled="false" Grouping="Or" />
+					</Trigger>
+				</Triggers>
+			</Folder>
+		</Folders>
+		<Triggers />
+	</ExportedFolder>
+</TriggernometryExport>
