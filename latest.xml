@@ -20,7 +20,7 @@
 						</Actions>
 						<Condition Enabled="false" Grouping="Or" />
 					</Trigger>
-					<Trigger Enabled="true" Name="0.1招募进组时重置" RegularExpression="^.{14} ChatLog 00:0039::加入了.{1,10}组建的“讨伐歼灭战：里塔提恩强攻战”队伍。$">
+					<Trigger Enabled="true" Name="0.1招募进组时重置" RegularExpression="^.{14} ChatLog 00:0039::加入了.{1,10}组建的“讨伐歼灭战：究极神兵破坏作战”队伍。$">
 						<Actions>
 							<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 加入了挖宝小队 数据已重置" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="NamedCallback">
 								<Condition Enabled="false" Grouping="Or" />
